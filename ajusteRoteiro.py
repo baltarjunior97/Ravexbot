@@ -1,3 +1,4 @@
+'''
 from openpyxl import load_workbook
 import openpyxl
 from openpyxl.worksheet import worksheet
@@ -26,4 +27,5 @@ worksheet.Worksheet.delete_cols(sheet, 7)
 
 
 roteiro =str("C://Users/djalm/Downloads/roteiro{}{}".format(d1, ".xlsx"))    
-openpyxl.Workbook.save(wb, filename=roteiro)
+openpyxl.Workbook.save(wb, filename=roteiro)'''
+

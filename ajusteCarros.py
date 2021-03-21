@@ -20,7 +20,7 @@ hoje = date.today()
 
 d1 = hoje.strftime("%d.%m.%Y")
 
-wb = load_workbook('C:\\Users\djalm\Downloads\RODOMAIKE.xlsx')
+wb = load_workbook('C:\\Users\djalm\Downloads\teste.xlsx')
 try:
     sheet1 = wb['Plan2']
     wb.remove_sheet(sheet1)
@@ -156,97 +156,175 @@ try:
 except:
     wb.remove_sheet(ws6)
 
+com.clear()
+fim.clear()
+
+for i in range(0, 300):
+    x = ws1.cell(row=i+1, column=1).value
+    if x == 1 :
+        com.append(i+1)
+
+for i in range(0, 300):
+    x = ws1.cell(row=i+1, column=1).value
+    if x == None:
+        fim.append(i+1)
+        break
+
+for i in range(0, 300):
+    x = ws2.cell(row=i+1, column=1).value
+    y = ws2.cell(row=i+1, column=2).value
+    if x == 1 :
+        com.append(i+1)
+
+for i in range(0, 300):
+    x = ws2.cell(row=i+1, column=1).value
+    if x == None:
+        fim.append(i+1)
+        break
+
+for i in range(0, 300):
+    x = ws3.cell(row=i+1, column=1).value
+    y = ws3.cell(row=i+1, column=2).value
+    if x == 1 :
+        com.append(i+1)
+
+for i in range(0, 300):
+    x = ws3.cell(row=i+1, column=1).value
+    if x == None:
+        fim.append(i+1)
+        break
+
+for i in range(0, 300):
+    x = ws4.cell(row=i+1, column=1).value
+    y = ws4.cell(row=i+1, column=2).value
+    if x == 1 :
+        com.append(i+1)
+
+for i in range(0, 300):
+    x = ws4.cell(row=i+1, column=1).value
+    if x == None:
+        fim.append(i+1)
+        break
+
+for i in range(0, 300):
+    x = ws5.cell(row=i+1, column=1).value
+    y = ws5.cell(row=i+1, column=2).value
+    if x == 1 :
+        com.append(i+1)
+
+for i in range(0, 300):
+    x = ws5.cell(row=i+1, column=1).value
+    if x == None:
+        fim.append(i+1)
+        break
+
+for i in range(0, 300):
+    x = ws6.cell(row=i+1, column=1).value
+    y = ws6.cell(row=i+1, column=2).value
+    if x == 1 :
+        com.append(i+1)
+
+for i in range(0, 300):
+    x = ws6.cell(row=i+1, column=1).value
+    if x == None:
+        fim.append(i+1)
+        break
+
 teste = wb.create_sheet('SheetA')
 lin = 0
 col = 0
+
+for j in range(1,10):
+    col = col+1
+    teste.cell(row=lin+1, column=col).fill = PatternFill(bgColor="111111", fill_type = "solid")
 for i in range(com[0], fim[0]):
     lin = lin+1
     col = 0
     for j in range(1, 10):
         col = col+1
         c = ws1.cell(row=i, column=j)
-        teste.cell(row=lin, column=col).value = c.value
+        teste.cell(row=lin+1, column=col).value = c.value
 col = 0
 for j in range(1,10):
     col = col+1
-    teste.cell(row=lin, column=col).fill = PatternFill(bgColor="000000", fill_type = "solid")
+    teste.cell(row=lin+2, column=col).fill = PatternFill(bgColor="111111", fill_type = "solid")
 
 try:
-    for i in range(com[0]+1, ):
+    for i in range(com[1], fim[1]):
         lin = lin+1
         col = 0
         for j in range(1, 10):
             col = col+1
             c = ws2.cell(row=i, column=j)
-            teste.cell(row=lin, column=col).value = c.value
+            teste.cell(row=lin+2, column=col).value = c.value
 
     col = 0
     for j in range(1,10):
         col = col+1
-        teste.cell(row=lin, column=col).fill = PatternFill(bgColor="000000", fill_type = "solid")
+        teste.cell(row=lin+3, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
 except:
     print()
 
 try:
-    for i in range(com[0]+1, ):
+    for i in range(com[2], fim[2]):
         lin = lin+1
         col = 0
         for j in range(1, 10):
             col = col+1
             c = ws3.cell(row=i, column=j)
-            teste.cell(row=lin, column=col).value = c.value
+            teste.cell(row=lin+3, column=col).value = c.value
 
     col = 0
     for j in range(1,10):
         col = col+1
-        teste.cell(row=lin, column=col).fill = PatternFill(bgColor="000000", fill_type = "solid")
+        teste.cell(row=lin+4, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
 except:
             print()
 try:
-    for i in range(com[0]+1, ):
+    for i in range(com[3], fim[3]):
         lin = lin+1
         col = 0
         for j in range(1, 10):
             col = col+1
             c = ws4.cell(row=i, column=j)
-            teste.cell(row=lin, column=col).value = c.value
+            teste.cell(row=lin+4, column=col).value = c.value
 
     col = 0
     for j in range(1,10):
         col = col+1
-        teste.cell(row=lin, column=col).fill = PatternFill(bgColor="000000", fill_type = "solid")
+        teste.cell(row=lin+5, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
 except:
     print()
 
 try:
-    for i in range(com[0]+1, ):
+    for i in range(com[4], fim[4]):
         lin = lin+1
         col = 0
         for j in range(1, 10):
             col = col+1
             c = ws5.cell(row=i, column=j)
-            teste.cell(row=lin, column=col).value = c.value
+            teste.cell(row=lin+5, column=col).value = c.value
 
     col = 0
     for j in range(1,10):
         col = col+1
-        teste.cell(row=lin, column=col).fill = PatternFill(bgColor="000000", fill_type = "solid")
+        teste.cell(row=lin+6, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
 except:
     print()
 
 try:
-    for i in range(com[0]+1, ):
+    for i in range(com[5], fim[5]):
         lin = lin+1
         col = 0
         for j in range(1, 10):
             col = col+1
             c = ws6.cell(row=i, column=j)
-            teste.cell(row=lin, column=col).value = c.value
+            teste.cell(row=lin+6, column=col).value = c.value
 
     col = 0
     for j in range(1,10):
         col = col+1
-        teste.cell(row=lin, column=col).fill = PatternFill(bgColor="000000", fill_type = "solid")
+        teste.cell(row=lin+7, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
 except:
     print()
 '''
