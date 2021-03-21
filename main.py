@@ -39,7 +39,7 @@ hoje = date.today()
 
 d1 = hoje.strftime("%d.%m.%Y")
 
-wb = load_workbook('C:\\Users\djalm\Downloads\RODOMAIKE.xlsx')
+wb = load_workbook('C:\\Users\djalm\Downloads\teste.xlsx')
 
 sheet = wb['Plan1'] 
 
