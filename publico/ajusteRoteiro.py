@@ -13,14 +13,13 @@ carro.clear()
 com.clear()
 fim.clear()
 feitas.clear()
-wsl1 = 1
 col = 0
 lin = 0
 hoje = date.today()
 
 d1 = hoje.strftime("%d.%m.%Y")
 
-wb = load_workbook('C:\\Users\djalm\Downloads\teste.xlsx')
+wb = load_workbook('#caminho#')
 try:
     sheet1 = wb['Plan2']
     wb.remove_sheet(sheet1)
@@ -236,7 +235,7 @@ col = 0
 
 for j in range(1,10):
     col = col+1
-    teste.cell(row=lin+1, column=col).fill = PatternFill(bgColor="111111", fill_type = "solid")
+    teste.cell(row=lin+1, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
 for i in range(com[0], fim[0]):
     lin = lin+1
     col = 0
@@ -247,7 +246,7 @@ for i in range(com[0], fim[0]):
 col = 0
 for j in range(1,10):
     col = col+1
-    teste.cell(row=lin+2, column=col).fill = PatternFill(bgColor="111111", fill_type = "solid")
+    teste.cell(row=lin+2, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
 
 try:
     for i in range(com[1], fim[1]):
@@ -328,11 +327,9 @@ try:
 except:
     print()
 '''
-schedule.every().day.at('10:50').do(realizada)
-        
+schedule.every().day.at('10:50').do(realizada)  
 schedule.every().day.at('13:50').do(realizada)
-
 schedule.every().day.at('16:50').do(realizada)
 '''
-roteiro =str("C://Users/djalm/Downloads/roteiro{}{}".format(d1, ".xlsx"))    
+roteiro =str("#caminho+nome do arquivo#")    
 openpyxl.Workbook.save(wb, filename=roteiro)
