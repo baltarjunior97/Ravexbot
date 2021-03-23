@@ -8,11 +8,34 @@ from openpyxl.styles import PatternFill
 carro = []
 com = []
 fim = []
+notas1 = []
+notas2 = []
+notas3 = []
+notas4 = []
+notas5 = []
+notas6 = []
+feitas = []
 hoje = date.today().strftime("%d.%m.%Y")
-roteiro =str("C://Users/user/Local/NomeFinaldoArquivo"))  
+roteiro =str("C://Users/user/Local/NomeFinaldoArquivo"))
+
+#funções
+def check():
+    for i in range(0, len(carro)):
+        while True:
+            try:
+                x = int(input(f'Em qual nota o {carro[i]} está? '))
+                feitas.append(x)
+                break
+            except:
+                continue
+    return feitas
+
+#salva o arquivo modificado
+def salvar():
+    openpyxl.Workbook.save(planilha, filename=roteiro)
 
 #abrir planilha e remover abas padrao excell vazias
-planilha = load_workbook(filename="C://Users/user/Local/NomedoArquivo")
+planilha = load_workbook(filename="C://Users/user/Local/NomeFinaldoArquivo")
 try:
     aba1 = planilha['Plan2']
     planilha.remove(aba1)
@@ -26,7 +49,7 @@ except:
     print()
 
 #declarar aba ativa
-aba = planilha['Plan1'] 
+aba = planilha['Plan1']
 
 #pegar dados dos carros para começar formatação
 for i in range(0, 300):
@@ -241,8 +264,7 @@ for i in range(com[0], fim[0]):
 col = 0
 for j in range(1,10):
     col = col+1
-    aba.cell(row=lin+2, column=col).fill = PatternFill(fgColor="111111", fill_type = "solid")
-
+    aba.cell(row=lin+2, column=col).fill = PatternFill(fgColor="808080", fill_type = "solid")
 try:
     for i in range(com[1], fim[1]):
         lin = lin+1
@@ -255,7 +277,7 @@ try:
     col = 0
     for j in range(1,10):
         col = col+1
-        aba.cell(row=lin+3, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
+        aba.cell(row=lin+3, column=col).fill = PatternFill(fgColor="808080", fill_type = "solid")
 except:
     pass
 
@@ -271,7 +293,7 @@ try:
     col = 0
     for j in range(1,10):
         col = col+1
-        aba.cell(row=lin+4, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
+        aba.cell(row=lin+4, column=col).fill = PatternFill(fgColor="808080", fill_type = "solid")
 except:
     pass
 try:
@@ -286,7 +308,7 @@ try:
     col = 0
     for j in range(1,10):
         col = col+1
-        aba.cell(row=lin+5, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
+        aba.cell(row=lin+5, column=col).fill = PatternFill(fgColor="808080", fill_type = "solid")
 except:
     pass
 
@@ -302,7 +324,7 @@ try:
     col = 0
     for j in range(1,10):
         col = col+1
-        aba.cell(row=lin+6, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
+        aba.cell(row=lin+6, column=col).fill = PatternFill(fgColor="808080", fill_type = "solid")
 except:
     pass
 
@@ -318,9 +340,50 @@ try:
     col = 0
     for j in range(1,10):
         col = col+1
-        aba.cell(row=lin+7, column=col).fill = PatternFill(bgColor="A1A1A1", fill_type = "solid")
-except:
-    pass
+        aba.cell(row=lin+7, column=col).fill = PatternFill(fgColor="808080", fill_type = "solid")
+except:pass
 
-#salva o arquivo modificado 
-openpyxl.Workbook.save(planilha, filename=roteiro)
+#Salvando numero das notas do carro
+try:   
+    for i in range(com[0], fim[0]):
+        notas1.append(ws1.cell(row=i, column=3).value)
+        
+
+except:pass
+
+try:   
+    for i in range(com[1], fim[1]):
+        notas2.append(ws2.cell(row=i, column=3).value)
+        
+
+except:pass
+
+try:   
+    for i in range(com[2], fim[2]):
+        notas3.append(ws3.cell(row=i, column=3).value)
+        
+
+except:pass
+
+try:   
+    for i in range(com[3], fim[3]):
+        notas4.append(ws4.cell(row=i, column=3).value)
+        
+
+except:pass
+
+try:   
+    for i in range(com[4], fim[4]):
+        notas5.append(ws5.cell(row=i, column=3).value)
+        
+
+except:pass
+
+try:   
+    for i in range(com[5], fim[5]):
+        notas6.append(ws6.cell(row=i, column=3).value)
+        
+
+except:pass
+
+salvar()
