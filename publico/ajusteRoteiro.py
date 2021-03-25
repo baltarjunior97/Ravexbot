@@ -449,6 +449,7 @@ def formatPlan():
     for j in range(1, 9):
         col = col + 1
         aba.cell(row=lin + 2, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
+        aba.cell(row=lin + 2, column=col).value = None
     try:
         for i in range(com[1], fim[1]):
             lin = lin + 1
@@ -466,6 +467,7 @@ def formatPlan():
         for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 3, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
+            aba.cell(row=lin + 3, column=col).value = None
     except Exception:
         pass
 
@@ -486,6 +488,7 @@ def formatPlan():
         for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 4, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
+            aba.cell(row=lin + 4, column=col).value = None
     except Exception:
         pass
     try:
@@ -505,6 +508,7 @@ def formatPlan():
         for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 5, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
+            aba.cell(row=lin + 5, column=col).value = None
     except Exception:
         pass
 
@@ -525,6 +529,7 @@ def formatPlan():
         for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 6, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
+            aba.cell(row=lin + 6, column=col).value = None
     except Exception:
         pass
 
@@ -545,6 +550,7 @@ def formatPlan():
         for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 7, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
+            aba.cell(row=lin + 7, column=col).value = None
     except Exception:
         pass
 
@@ -823,6 +829,7 @@ try:
 except Exception:
     pass
 
+anotacao()
 check()
 formatPlan()
 salvar()
