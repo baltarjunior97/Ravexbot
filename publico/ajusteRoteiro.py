@@ -21,6 +21,87 @@ roteiro = str("C://Users/user/Local/NomeFinaldoArquivo")
 
 # funções
 
+def semCarimbo():
+    nNota1 = 0
+    car = str(input('Qual carro? '))
+    while True:
+        if car not in carro:
+            print('Carros Disponiveis:')
+            for y in range(0, len(carro)):
+                print(carro[y])
+            car = str(input('Qual carro? '))
+        elif car in carro:
+            break
+    xpos = carro.index(car)
+    if xpos == 0:
+        nNota1 = int(input(f'Qual nota do carro {car}?'))
+        while True:
+            if nNota1 not in notas1:
+                nNota1 = int(input(f'Qual nota do carro {car}?'))
+            elif nNota1 in notas1:
+                break
+    if xpos == 1:
+        nNota1 = int(input(f'Qual nota do carro {car}?'))
+        while True:
+            if nNota1 not in notas2:
+                nNota1 = int(input(f'Qual nota do carro {car}?'))
+            elif nNota1 in notas2:
+                break
+    if xpos == 2:
+        nNota1 = int(input(f'Qual nota do carro {car}?'))
+        while True:
+            if nNota1 not in notas3:
+                nNota1 = int(input(f'Qual nota do carro {car}?'))
+            elif nNota1 in notas3:
+                break
+    if xpos == 3:
+        nNota1 = int(input(f'Qual nota do carro {car}?'))
+        while True:
+            if nNota1 not in notas4:
+                nNota1 = int(input(f'Qual nota do carro {car}?'))
+            elif nNota1 in notas4:
+                break
+    if xpos == 4:
+        nNota1 = int(input(f'Qual nota do carro {car}?'))
+        while True:
+            if nNota1 not in notas5:
+                nNota1 = int(input(f'Qual nota do carro {car}?'))
+            elif nNota1 in notas5:
+                break
+    if xpos == 5:
+        nNota1 = int(input(f'Qual nota do carro {car}?'))
+        while True:
+            if nNota1 not in notas6:
+                nNota1 = int(input(f'Qual nota do carro {car}?'))
+            elif nNota1 in notas6:
+                break
+    note = 'sem carimbo'
+
+    if xpos == 0:
+        for i in range(com[xpos], fim[xpos]):
+            if ws1.cell(row=i, column=3).value == nNota1:
+                ws1.cell(row=i, column=8).value = note
+    if xpos == 1:
+        for i in range(com[xpos], fim[xpos]):
+            if ws2.cell(row=i, column=3).value == nNota1:
+                ws2.cell(row=i, column=8).value = note
+    if xpos == 2:
+        for i in range(com[xpos], fim[xpos]):
+            if ws3.cell(row=i, column=3).value == nNota1:
+                ws3.cell(row=i, column=8).value = note
+    if xpos == 3:
+        for i in range(com[xpos], fim[xpos]):
+            if ws4.cell(row=i, column=3).value == nNota1:
+                ws4.cell(row=i, column=8).value = note
+    if xpos == 4:
+        for i in range(com[xpos], fim[xpos]):
+            if ws5.cell(row=i, column=3).value == nNota1:
+                ws5.cell(row=i, column=8).value = note
+    if xpos == 5:
+        for i in range(com[xpos], fim[xpos]):
+            if ws6.cell(row=i, column=3).value == nNota1:
+                ws6.cell(row=i, column=8).value = note
+
 
 def reentrega():
     nNota1 = 0
@@ -318,27 +399,33 @@ def check():
         if xpos == 0:
             for i in range(com[xpos], feitas[xpos]):
                 for y in range(1, 9):
-                    ws1.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
+                    if ws1.cell(row=i, column=y).fill.start_color.index == '00000000':
+                        ws1.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
         if xpos == 1:
             for i in range(com[xpos], feitas[xpos]):
                 for y in range(1, 9):
-                    ws2.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
+                    if ws2.cell(row=i, column=y).fill.start_color.index == '00000000':
+                        ws2.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
         if xpos == 2:
             for i in range(com[xpos], feitas[xpos]):
                 for y in range(1, 9):
-                    ws3.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
+                    if ws3.cell(row=i, column=y).fill.start_color.index == '00000000':
+                        ws3.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
         if xpos == 3:
             for i in range(com[xpos], feitas[xpos]):
                 for y in range(1, 9):
-                    ws4.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
+                    if ws4.cell(row=i, column=y).fill.start_color.index == '00000000':
+                        ws4.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
         if xpos == 4:
             for i in range(com[xpos], feitas[xpos]):
                 for y in range(1, 9):
-                    ws5.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
+                    if ws5.cell(row=i, column=y).fill.start_color.index == '00000000':
+                        ws5.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
         if xpos == 5:
             for i in range(com[xpos], feitas[xpos]):
                 for y in range(1, 9):
-                    ws6.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
+                    if ws6.cell(row=i, column=y).fill.start_color.index == '00000000':
+                        ws6.cell(row=i, column=y).fill = PatternFill(fgColor="0000FF00", fill_type="solid")
 
 
 # Formatação final da planilha principal
@@ -353,9 +440,13 @@ def formatPlan():
             col = col + 1
             plan = ws1.cell(row=i, column=j)
             aba.cell(row=lin + 1, column=col).value = plan.value
+            if aba.cell(row=lin + 1, column=col).fill.start_color.index == '00000000':
+                cor = ws1.cell(row=i, column=j).fill.start_color.index
+                if cor != '00000000':
+                    aba.cell(row=lin + 1, column=col).fill = PatternFill(fgColor=cor, fill_type='solid')
 
     col = 0
-    for j in range(1, 10):
+    for j in range(1, 9):
         col = col + 1
         aba.cell(row=lin + 2, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
     try:
@@ -366,9 +457,13 @@ def formatPlan():
                 col = col + 1
                 plan = ws2.cell(row=i, column=j)
                 aba.cell(row=lin + 2, column=col).value = plan.value
+                if aba.cell(row=lin + 2, column=col).fill.start_color.index == '00000000':
+                    cor = ws2.cell(row=i, column=j).fill.start_color.index
+                    if cor != '00000000':
+                        aba.cell(row=lin + 2, column=col).fill = PatternFill(fgColor=cor, fill_type='solid')
 
         col = 0
-        for j in range(1, 10):
+        for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 3, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
     except Exception:
@@ -382,9 +477,13 @@ def formatPlan():
                 col = col + 1
                 plan = ws3.cell(row=i, column=j)
                 aba.cell(row=lin + 3, column=col).value = plan.value
+                if aba.cell(row=lin + 3, column=col).fill.start_color.index == '00000000':
+                    cor = ws3.cell(row=i, column=j).fill.start_color.index
+                    if cor != '00000000':
+                        aba.cell(row=lin + 3, column=col).fill = PatternFill(fgColor=cor, fill_type='solid')
 
         col = 0
-        for j in range(1, 10):
+        for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 4, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
     except Exception:
@@ -397,9 +496,13 @@ def formatPlan():
                 col = col + 1
                 plan = ws4.cell(row=i, column=j)
                 aba.cell(row=lin + 4, column=col).value = plan.value
+                if aba.cell(row=lin + 4, column=col).fill.start_color.index == '00000000':
+                    cor = ws4.cell(row=i, column=j).fill.start_color.index
+                    if cor != '00000000':
+                        aba.cell(row=lin + 4, column=col).fill = PatternFill(fgColor=cor, fill_type='solid')
 
         col = 0
-        for j in range(1, 10):
+        for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 5, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
     except Exception:
@@ -413,9 +516,13 @@ def formatPlan():
                 col = col + 1
                 plan = ws5.cell(row=i, column=j)
                 aba.cell(row=lin + 5, column=col).value = plan.value
+                if aba.cell(row=lin + 5, column=col).fill.start_color.index == '00000000':
+                    cor = ws5.cell(row=i, column=j).fill.start_color.index
+                    if cor != '00000000':
+                        aba.cell(row=lin + 5, column=col).fill = PatternFill(fgColor=cor, fill_type='solid')
 
         col = 0
-        for j in range(1, 10):
+        for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 6, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
     except Exception:
@@ -429,9 +536,13 @@ def formatPlan():
                 col = col + 1
                 plan = ws6.cell(row=i, column=j)
                 aba.cell(row=lin + 6, column=col).value = plan.value
+                if aba.cell(row=lin + 6, column=col).fill.start_color.index == '00000000':
+                    cor = ws6.cell(row=i, column=j).fill.start_color.index
+                    if cor != '00000000':
+                        aba.cell(row=lin + 6, column=col).fill = PatternFill(fgColor=cor, fill_type='solid')
 
         col = 0
-        for j in range(1, 10):
+        for j in range(1, 9):
             col = col + 1
             aba.cell(row=lin + 7, column=col).fill = PatternFill(fgColor="808080", fill_type="solid")
     except Exception:
@@ -443,7 +554,7 @@ def salvar():
 
 
 # abrir planilha e remover abas padrao excell vazias
-planilha = load_workbook(filename="C://Users/user/Local/NomeFinaldoArquivo")
+planilha = load_workbook(filename='C://Users/user/Local/NomeFinaldoArquivo')
 try:
     aba1 = planilha['Plan2']
     planilha.remove(aba1)
@@ -712,9 +823,6 @@ try:
 except Exception:
     pass
 
-devolucao()
 check()
-anotacao()
-reentrega()
 formatPlan()
 salvar()
